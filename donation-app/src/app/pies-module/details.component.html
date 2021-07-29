@@ -8,10 +8,8 @@
           <h3 style="font-size: 50px; padding: 30px; color: rgb(211, 114, 114); font-style: italic;" >{{pieData.data.pie_name}}</h3>
           <img src="{{pieData.data.img}}" height="300px" width="400px" style="text-align: center;">
           <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;"  >Ingredients:  {{pieData.data.ingredients  }}</h3> ,
-          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;" >Pie Weight - {{pieData.data.weight}}</h3>
-          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;" >Pie Width - {{pieData.data.width}}</h3>
-          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;">Date Pie Was Posted For Donation - {{pieData.data.date_posted}}</h3>
-          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;" >Pie Good Until - {{pieData.data.good_unitl}}</h3>
+          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;">Date Pie Was Posted For Donation - {{pieData.data.date_posted|date}}</h3>
+          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;" >Pie Good Until - {{pieData.data.good_unitl|date}}</h3>
       </mat-card-subtitle><br>
         </mat-card-content>
     </mat-card>
