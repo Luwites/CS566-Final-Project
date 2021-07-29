@@ -69,11 +69,12 @@ var addressTo = {
 };
 
 var parcel = {
-    "length": req.body.length,
+
     "width": req.body.width,
+    "weight": req.body.weight,
+    "length": req.body.length,
     "height": req.body.height,
     "distance_unit": "in",
-    "weight": req.body.weight,
     "mass_unit": "lb"
 }
     shippo.address.create(addressTo, function(err, shipment){
