@@ -88,7 +88,7 @@ var parcel = {
               "parcels": [parcel],
             "async": false
            }, function(err, shipment){
-            //  console.log(shipment)
+              console.log(shipment)
              
               const rate_amount = shipment.rates.map(obj => {
                   return obj.amount;
