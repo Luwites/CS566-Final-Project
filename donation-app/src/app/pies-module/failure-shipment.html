@@ -1,0 +1,12 @@
+<div style="padding: 90px; background-size: cover; display:cover; width:90%; height:85%; background-position: center;" [ngStyle]="{'background-image': getUrl()}">
+    <div class="cardInner"style="padding: 20px; width: 800px; height: 600px;" width="800px" height="600px">
+        <mat-grid-list cols="1" fxLayout="row">
+            <mat-grid-tile-header>
+                <a mat-flat-button color="accent" style="font-size: 25px; font-style: italic; line-height: 3;"[routerLink]="['']">Go To Home Page</a>
+            </mat-grid-tile-header>
+            <mat-grid-tile style="font-size: 35px; font-style: italic; line-height: 1.5;">
+                Oops! sorry, but the shipping information you provided was not valid, please try again.
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+  </div>

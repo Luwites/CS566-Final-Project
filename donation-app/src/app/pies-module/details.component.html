@@ -1,0 +1,68 @@
+ <div class='md-padding' layout="row" layout-wrap [ngStyle]="{'background-image': getUrl()}"style="padding: 100px" width="40px" height="40px">
+
+    
+    <div class="md-actions" layout="row" layout-align="end right">
+        <a mat-button style="font-size: 30px; padding: 15px; color: rgb(211, 114, 114); font-style: italic;" [routerLink]="['']">Go Back To List</a>
+    </div>
+      <mat-card  ng-repeat="pie in pieList" style="width: 800px;" style="padding-left: 250px;"> 
+        <mat-card-content >
+            <mat-card-subtitle >
+                 <!-- <a mat-button [routerLink]="[pie._id]" [state]="{data: pie}">{{pie.pie_name}}</a> -->
+          <h3 style="font-size: 50px; padding: 30px; color: rgb(211, 114, 114); font-style: italic;" >{{pieData.data.pie_name}}</h3>
+          <img src="{{pieData.data.img}}" height="300px" width="400px" style="text-align: center;">
+          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;"  >Ingredients:  {{pieData.data.ingredients  }}</h3> ,
+          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;" >Pie Weight - {{pieData.data.weight}}</h3>
+          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;" >Pie Width - {{pieData.data.width}}</h3>
+          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;">Date Pie Was Posted For Donation - {{pieData.data.date_posted}}</h3>
+          <h3 style="font-size: 30px; font-style: italic; line-height: 1.5;" >Pie Good Until - {{pieData.data.good_unitl}}</h3>
+      </mat-card-subtitle><br>
+        </mat-card-content>
+    </mat-card>
+    <div class="md-actions" layout="row">
+        <a mat-button style="font-size: 30px; padding: 15px; color: rgb(211, 114, 114); font-style: italic;" [routerLink]="['shipping_details']" [state]="{toBeOrdered: pieData.data}">Yummy Right? Click here to request a free shippment</a>
+    </div>
+    </div>
+<!-- 
+    <mat-grid-list cols = "4" rowHeight = "500px">
+        <mat-grid-tile 
+        [colspan] = "1">{{pieData.data.pie_name}}
+        </mat-grid-tile>
+        <mat-grid-tile 
+        [rowspan] = "1"><img src="{{pieData.data.img}}" height="300px" width="400px" style="text-align: center;">
+        </mat-grid-tile>
+        <mat-grid-tile 
+        [rowspan] = "1"><img src="{{pieData.data.img}}" height="300px" width="400px" style="text-align: center;">
+        </mat-grid-tile>
+        <mat-grid-tile 
+        [rowspan] = "1"><h3>Ingredients</h3><h3  style="font-size: 30px;" *ngFor="let pie of pieData.data.ingredients">{{pie}}</h3>
+        </mat-grid-tile>
+     </mat-grid-list> -->
+ 
+     <!-- <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+
+      .example-card {
+        max-width: 400px;
+      }
+      
+      .example-header-image {
+        background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+        background-size: cover;
+      } -->

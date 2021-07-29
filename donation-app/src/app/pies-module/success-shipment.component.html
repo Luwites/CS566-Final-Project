@@ -1,0 +1,25 @@
+<!-- <div>
+    <div class="cardInner" style="padding: 100px" width="800px" height="600px">
+        <mat-grid-list cols="1"  fxLayout="row">
+            <mat-grid-tile>
+                <p>Your request have been submitted successfully!</p>
+                <p>Here is your tracking number and url provider for your reference</p>
+                <p>Tracking number - {{tracking_number}}</p>
+                <p>URL provider - {{url_provider}}</p>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+  </div> -->
+ <mat-card style="padding: 50px;">
+                <mat-card-content [ngStyle]="{'background-image': getUrl()}" style="padding: 200px; background-size: cover; display:cover; width:79%; height:100%; background-position: center;">
+                    </mat-card-content >
+                    <mat-label style="font-size: 25px; font-style: italic; line-height: 1.5; color: rgb(158, 154, 118); padding: 50px;">
+                    <p>Your request have been submitted successfully!
+    Here is your tracking information for your reference.</p><br>
+    Your Tracking Number -- {{ tracking_number}} <br>
+    Your URL - Provider --<a  href="{{url_provider}}">{{url_provider}}</a><br>
+    Your Shipping Label --<a  href="{{shipping_label}}">{{shipping_label}}</a><br><br>
+    
+<p>Thank You !</p>
+</mat-label>
+                </mat-card>

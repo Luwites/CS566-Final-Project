@@ -1,0 +1,36 @@
+<div class='md-padding' layout="row" layout-wrap [ngStyle]="{'background-image': getUrl()}" style="padding: 100px; background-size: cover; display:cover; width:100%; height:100%; background-position: center;">
+ <form [formGroup]="myobj">
+<mat-card style=" width: 600px; height: 700px; max-width: 500px; text-align: center; padding: 20px;">
+    <p style="font-size: 30px; font-style: italic; line-height: 1.5; padding: 25px; color:rgb(150, 137, 20)">Please fill in your shipping information</p>
+    <ng-template matStepLabel>Enter Your Full Name</ng-template>
+        <mat-label style="font-size: 15px; font-style: italic; line-height: 1.5; color: rgb(150, 137, 20);">Full Name</mat-label><br>
+        <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="name" required><br>
+      <ng-template matStepLabel>Enter Your Email</ng-template>
+        <mat-label style="font-size: 15px; font-style: italic; line-height: 1.5; color: rgb(150, 137, 20);">Email</mat-label><br>
+        <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="email" required><br>
+        <mat-label style="font-size: 15px; font-style: italic; line-height: 1.5; color: rgb(150, 137, 20);">Phone</mat-label><br>
+        <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="phone" required><br>
+        <mat-label style="font-size: 15px; font-style: italic; line-height: 1.5; color: rgb(150, 137, 20);">Address Line 1</mat-label><br>
+        <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="address1" required><br>
+        <mat-label style="font-size: 15px; font-style: italic; line-height: 1.5; color: rgb(150, 137, 20);">Address Line 2</mat-label><br>
+        <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="address2" required><br>
+        <mat-label style="font-size: 15px; font-style: italic; line-height: 1.5; color: rgb(150, 137, 20);">Zipcode</mat-label><br>
+        <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="zipcode" required><br>
+        <mat-label style="font-size: 15px; font-style: italic; line-height: 1.5; color: rgb(150, 137, 20);">City</mat-label><br>
+        <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="city" required><br><br>
+        <!-- <mat-label style="font-size: 15px; font-style: italic; line-height: 1.5;">State</mat-label><br>
+         <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="state" required><br> -->
+         <mat-form-field appearance="fill">
+            <mat-label>Select Your State</mat-label>
+            <mat-select style="font-size: 15px; font-style: italic; line-height: 1.5;" formControlName="state" required disableRipple>
+              <mat-option style="font-size: 15px; font-style: italic; line-height: 2;" *ngFor="let state of states" [value]="state.value">{{state.value}}</mat-option>
+            </mat-select>
+          </mat-form-field><br>
+
+        <button style="font-size: 20px; font-style: italic; line-height: 1.5; color: rgb(221, 210, 115);" mat-button (click)="saveShippingDetails()" color="accent" [disabled]="!myobj.valid">Submit</button>
+        
+    </mat-card>
+     <!-- [disabled]="!myobj.valid" -->
+</form> 
+
+
