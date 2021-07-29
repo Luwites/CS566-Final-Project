@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
 
-//var Raven = require('raven');
+
 var shippo = require('shippo')('shippo_test_a78177cb6c9ff706ac745ca45815ed49e8b59aad');
 const MongoClient = require("mongodb").MongoClient;
 const client = new MongoClient('mongodb+srv://Luwi2:luluCS477@cluster0.f4gwy.mongodb.net/final-project-566?retryWrites=true&w=majority', 
@@ -78,6 +78,7 @@ var parcel = {
     shippo.address.create(addressTo, function(err, shipment){
 
       // Creating my shippment after validating the address
+      
       if(shipment.validation_results.is_valid === true){
         shippo.shipment.create({
              "address_from": addressFrom,
@@ -107,6 +108,7 @@ var parcel = {
               
           
         //creating a transaction by purchasing the minimum rate.
+
           shippo.transaction.create({
               "rate": s[0].object_id,
             "label_file_type": "PDF",
@@ -126,30 +128,6 @@ var parcel = {
       //  res.json(shipment.validation_results.is_valid)
       
     })
-
-// shippo.shipment.create({
-//     "address_from": addressFrom,
-//     "address_to": addressTo,
-//     "parcels": [parcel],
-//     "async": false
-// }, function(err, shipment){
-//   console.log(shipment)
-//   var rate = shipment.rates[0];
-
-//   // res.json(shipment)
-
-// //Purchase the desired rate.
-// shippo.transaction.create({
-//     "rate": rate.object_id,
-//     "label_file_type": "PDF",
-//     "async": false
-// }, function(err, transaction) {
-//   console.log(transaction)
-//   res.json(transaction)
-   
-// });
-
-// });
 
 })
 // error handler

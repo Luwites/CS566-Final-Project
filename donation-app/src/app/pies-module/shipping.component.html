@@ -18,8 +18,6 @@
         <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="zipcode" required><br>
         <mat-label style="font-size: 15px; font-style: italic; line-height: 1.5; color: rgb(150, 137, 20);">City</mat-label><br>
         <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="city" required><br><br>
-        <!-- <mat-label style="font-size: 15px; font-style: italic; line-height: 1.5;">State</mat-label><br>
-         <input style="font-size: 15px; font-style: italic; line-height: 2;" matInput formControlName="state" required><br> -->
          <mat-form-field appearance="fill">
             <mat-label>Select Your State</mat-label>
             <mat-select style="font-size: 15px; font-style: italic; line-height: 1.5;" formControlName="state" required disableRipple>
@@ -30,7 +28,6 @@
         <button style="font-size: 20px; font-style: italic; line-height: 1.5; color: rgb(221, 210, 115);" mat-button (click)="saveShippingDetails()" color="accent" [disabled]="!myobj.valid">Submit</button>
         
     </mat-card>
-     <!-- [disabled]="!myobj.valid" -->
 </form> 
 
 

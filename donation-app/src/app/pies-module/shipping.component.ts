@@ -55,7 +55,6 @@ export class ShippingComponent implements OnInit {
   ngOnInit(): void {
   }
   saveShippingDetails(){
-    // console.log(this.myobj.value)
     this.service.submitAddressForShipment(this.myobj.value).subscribe((data:any) => {
       console.log(data)
       if(data.status === "SUCCESS"){

@@ -10,7 +10,6 @@ import { PieService } from '../pie.service';
   ]
 })
 export class DetailsComponent {
-  // temp:any = false
   pieId: any 
 pieData:any={}
   constructor(private service: PieService, private router: Router) {
@@ -21,13 +20,7 @@ pieData:any={}
     this.service.setId(this.pieData.data._id)
     }
   }
-  ngOnInit(): void {
-//     this.service.getPieDetailsById(this.pieData.data._id).subscribe(data => {
-//  console.log(data)
-    //})
-   
-    
-  }
+
   getUrl()
   {
     return "url('https://img.freepik.com/free-vector/pink-marble-background-light-elegant-template_87408-118.jpg?size=626&ext=jpg')";

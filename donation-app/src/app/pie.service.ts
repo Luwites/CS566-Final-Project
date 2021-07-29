@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class PieService {
 tempId:any=''
-temp: any = false
+
   constructor(private http: HttpClient) { }
 
   getAllPiesUpForDonation() {
@@ -23,11 +23,5 @@ temp: any = false
   }
   getId(){
     return this.tempId;
-  }
-  gettoggler(){
-    return this.temp
-  }
-  setToggler(){
-    this.temp = !this.temp
   }
 }

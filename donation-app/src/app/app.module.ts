@@ -14,7 +14,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MainComponent } from './main.component';
 import { LoginComponent } from './login.component';
-import { ShippingComponent } from './pies-module/shipping.component';
 import { AboutComponent } from './about.component';
 import { ContactUsComponent } from './contact-us.component';
 
@@ -27,7 +26,6 @@ import { ContactUsComponent } from './contact-us.component';
     LoginComponent,
     AboutComponent,
     ContactUsComponent
-    // ShippingComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +39,7 @@ import { ContactUsComponent } from './contact-us.component';
     MatTabsModule,
     RouterModule.forRoot([
       {path:'', component:MainComponent},
-    //  {path:'home', component:HomeComponent},
      {path:':id', loadChildren:()=>import('./pies-module/pies-module.module').then(m=>m.PiesModuleModule)}
-      //loadChildren:()=>import('./users-module/users-module.module').then(m=>m.UsersModuleModule)
     ])
   ],
   providers: [],
