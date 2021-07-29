@@ -47,7 +47,7 @@
         <mat-grid-list cols="2" rowHeight="2:1" fxLayout="row">
             <mat-grid-tile  *ngFor="let pie of pieList">
                 <img src="{{pie.img}}" height="300px" width="300px" >
-                <a mat-button color="accent" style="font-size: 35px; font-style: italic"[routerLink]="[pie._id]" [state]="{data: pie}" (change)="pie()">{{pie.pie_name}}</a>
+                <a mat-button color="accent" style="font-size: 25px; font-style: italic"[routerLink]="[pie._id]" [state]="{data: pie}" (change)="pie()">{{pie.pie_name}}</a>
             </mat-grid-tile>
           </mat-grid-list>
         </div>
