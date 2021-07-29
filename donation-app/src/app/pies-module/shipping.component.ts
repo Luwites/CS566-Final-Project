@@ -12,7 +12,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
   ]
 })
 
-export class ShippingComponent implements OnInit {
+export class ShippingComponent {
   piedataNew: any
   states: any[] = [
     {value: 'AL', viewValue: 'AL'},
@@ -44,18 +44,21 @@ export class ShippingComponent implements OnInit {
   myobj = this.fb.group({
     name: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    phone: ['', Validators.required],
+    phone: ['',],
     address1: ['', Validators.required],
     address2: [''],
     zipcode: ['', Validators.required],
     city: ['', Validators.required],
     state: ['', Validators.required]
   })
-
-  ngOnInit(): void {
-  }
   saveShippingDetails(){
-    this.service.submitAddressForShipment(this.myobj.value).subscribe((data:any) => {
+    let copyObj = {...this.myobj.value}
+    copyObj.length = this.piedataNew.toBeOrdered.length
+    copyObj.width = this.piedataNew.toBeOrdered.width
+    copyObj.height = this.piedataNew.toBeOrdered.height
+    copyObj.weight = this.piedataNew.toBeOrdered.weight
+    console.log(copyObj)
+    this.service.submitAddressForShipment(copyObj).subscribe((data:any) => {
       console.log(data)
       if(data.status === "SUCCESS"){
         this.router.navigate(['/' ,'shipping_details', 'success'], {state:{orderedPieData:this.piedataNew.toBeOrdered, orderData:data}})
