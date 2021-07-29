@@ -8,7 +8,7 @@ const bcrypt = require("bcryptjs");
 
 /* GET home page. */
 router.post("/", function (req, res, next) {
-  req.db.collection('users')
+  req.db.collection('admin')
     .findOne({ email: req.body.email })
     .then((data) => {
       if (!data) {
@@ -16,7 +16,7 @@ router.post("/", function (req, res, next) {
           .status(404)
           .json({
             status:
-              "faild, unknown user, please signup or make sure to insert the correct required data",
+              "failed, you are not admin",
           });
       } else {
         if (bcrypt.compareSync("" + req.body.password, data.password)) {
@@ -26,7 +26,7 @@ router.post("/", function (req, res, next) {
           let token = jwt.generete(obj);
           res.status(201).json({ status: "success", result: token ,userInfo: data});
         } else {
-          res.status(404).json({ status: "faild, incorrect password" });
+          res.status(404).json({ status: "failed, incorrect password" });
         }
       }
     })

@@ -8,18 +8,18 @@ const bcrypt = require("bcryptjs");
 
 /* POST /api/v1/signup. */
 router.post("/", function (req, res, next) {
-  req.db.collection('users')
+  req.db.collection('admin')
     .findOne({ email: req.body.email})
     .then((data) => {
       if (data) {
         res.status(409).json({
           status:
-            "faild, user already exist, email and password must be unique",
+            "failed, user already exist, email and password must be unique",
         });
       } else {
         let mybody = req.body;
         mybody.password= bcrypt.hashSync("" + req.body.password, 12),
-        req.db.collection('users')
+        req.db.collection('admin')
           .insertOne(mybody)
           .then((data) => {
             console.log(`signed up....`);
